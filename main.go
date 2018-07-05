@@ -95,8 +95,8 @@ func main() {
 	config.RDYRedistributeInterval = 1000 * time.Millisecond
 	config.MaxInFlight = 2500
 
-	MakeConsumer("Topic_string", "ch", config, HandleStringMessage)
-	MakeConsumer("Topic_json", "ch", config, HandleJSONMessage)
+	MakeConsumer("topic_string", "ch", config, HandleStringMessage)
+	MakeConsumer("topic_json", "ch", config, HandleJSONMessage)
 
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
